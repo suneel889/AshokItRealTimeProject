@@ -1,0 +1,63 @@
+package com.example.service;
+
+import java.util.List;
+
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.example.bindings.Cities;
+import com.example.bindings.Countries;
+import com.example.bindings.UserDetails;
+import com.example.repo.UserDetailsRepo;
+import com.example.repo.UserStatesRepo;
+import com.example.repo.UsercitiesRepo;
+import com.example.repo.UsersCOuntriesRepo;
+
+public class UserServiceImplementationClass implements UserRegistrationServiceInterface {
+	
+	@Autowired
+	private UsercitiesRepo citiesrepo;
+	@Autowired
+	private UserDetailsRepo userDetailsrepo;
+	@Autowired
+	private UserStatesRepo statesrepo; 
+	@Autowired
+	private UsersCOuntriesRepo countriesrepo;
+
+	@Override
+	public String userRegistration(UserDetails userdetails) {
+		
+		UserDetails userdetails1=new UserDetails();
+		BeanUtils.copyProperties(userdetails, userdetails1);
+		
+		
+		
+		
+		return "User registerered sucessfully "+userDetailsrepo.save(userdetails1);
+	}
+
+	@Override
+	public List<Countries> getAllStatesByCountryId(Integer countryId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Cities> getAllCitiesByStatesId(Integer stateId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Countries> getALlCOuntries() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<String> getAllMailIds() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

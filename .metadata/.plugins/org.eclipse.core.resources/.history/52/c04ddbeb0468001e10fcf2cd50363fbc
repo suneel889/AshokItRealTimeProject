@@ -1,0 +1,46 @@
+package com.example.service;
+
+import java.util.List;
+
+import org.springframework.beans.BeanUtils;
+
+import com.example.bindings.Cities;
+import com.example.bindings.Countries;
+import com.example.bindings.UserDetails;
+
+public class UserServiceImplementationClass implements UserRegistrationServiceInterface {
+
+	@Override
+	public String userRegistration(UserDetails userdetails) {
+		
+		UserDetails userdetails1=BeanUtils.copyProperties(userdetails, userdetails1);
+		
+		
+		return null;
+	}
+
+	@Override
+	public List<Countries> getAllStatesByCountryId(Integer countryId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Cities> getAllCitiesByStatesId(Integer stateId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Countries> getALlCOuntries() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<String> getAllMailIds() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

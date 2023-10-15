@@ -1,0 +1,16 @@
+
+server.port=9090
+spring.datasource.url=jdbc:h2:mem:testdb
+spring.datasource.driverClassName=org.h2.Driver
+spring.datasource.username=sa
+spring.datasource.password=password
+spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+
+
+
+
+spring.mvc.pathmatch.matching-strategy=ant-path-matcher 
+spring.profiles.active=test
+spring.jpa.properties.hibernateenable_lazy_load_no_trans=true
+spring.jpa.show-sql=true
+spring.jpa.hibernate.ddl-auto=update

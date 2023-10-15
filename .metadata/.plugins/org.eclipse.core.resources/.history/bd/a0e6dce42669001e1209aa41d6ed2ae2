@@ -1,0 +1,17 @@
+package com.example.service;
+
+import java.util.List;
+
+import com.example.bindings.Cities;
+import com.example.bindings.Countries;
+import com.example.bindings.UserDetails;
+
+public interface UserRegistrationServiceInterface {
+	
+	public String userRegistration(UserDetails userdetails);
+	public List<Countries> getAllStatesByCountryId(Integer countryId);
+	public List<Cities> getAllCitiesByStatesId(Integer stateId);
+	public List<Countries> getALlCOuntries();
+	public List<String>  getAllMailIds();
+
+}

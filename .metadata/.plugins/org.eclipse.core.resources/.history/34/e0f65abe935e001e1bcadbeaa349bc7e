@@ -1,0 +1,47 @@
+package com.example.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.bindings.ContactForm;
+import com.example.entity.Contact;
+import com.example.service.ContactServiceInterface;
+
+@RestController
+@RequestMapping("/api/contact")
+public class ContactController {
+	@Autowired
+	private ContactServiceInterface service;
+	
+	@PostMapping("savecontact")
+public ResponseEntity<String> saveContact(@RequestBody ContactForm contact) {
+		
+		String msg=service.saveContact(contact);
+		System.out.print(contact);
+		
+		return new ResponseEntity<String>(msg,HttpStatus.OK);
+	}
+	
+	@GetMapping("/view")
+	public ResponseEntity<List<ContactForm>> getAllContacts(){
+		
+		return new ResponseEntity<>(service.getAllContacts(),HttpStatus.OK);
+		
+	}
+	
+	//public List<ContactForm> deleteContact(Integer id){}
+	
+	//public List<ContactForm> editContact(Contact contact){}
+	
+	
+	
+
+}

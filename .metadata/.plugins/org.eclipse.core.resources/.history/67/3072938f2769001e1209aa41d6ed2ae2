@@ -1,0 +1,54 @@
+package com.example.service;
+
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.example.bindings.Cities;
+import com.example.bindings.Countries;
+import com.example.bindings.UserDetails;
+import com.example.repo.UserDetailsRepo;
+import com.example.repo.UserStatesRepo;
+import com.example.repo.UsercitiesRepo;
+import com.example.repo.UsersCOuntriesRepo;
+
+public class UserServiceImplementationClass implements UserRegistrationServiceInterface {
+	
+	@Autowired
+	private UsercitiesRepo citiesrepo;
+	@Autowired
+	private UserDetailsRepo userDetailsrepo;
+	@Autowired
+	private UserStatesRepo statesrepo; 
+	@Autowired
+	private UsersCOuntriesRepo countriesrepo;
+	@Override
+	public boolean userRegistration(UserDetails userdetails) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	@Override
+	public Map<Integer, String> getAllStatesByCountryId(Integer countryId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public Map<Integer, String> getAllCitiesByStatesId(Integer stateId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public Map<Integer, String> getALlCOuntries() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public boolean getAllMailIds() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	
+}

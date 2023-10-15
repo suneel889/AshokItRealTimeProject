@@ -1,0 +1,63 @@
+package com.example.service;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.example.bindings.UserDetails;
+import com.example.entity.UserCountries;
+import com.example.entity.UserStates;
+import com.example.repo.UserDetailsRepo;
+import com.example.repo.UserStatesRepo;
+import com.example.repo.UsercitiesRepo;
+import com.example.repo.UsersCOuntriesRepo;
+
+public class UserServiceImplementationClass implements UserRegistrationServiceInterface {
+	
+	@Autowired
+	private UsercitiesRepo citiesrepo;
+	@Autowired
+	private UserDetailsRepo userDetailsrepo;
+	@Autowired
+	private UserStatesRepo statesrepo; 
+	@Autowired
+	private UsersCOuntriesRepo countriesrepo;
+	@Override
+	public boolean userRegistration(UserDetails userdetails) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+	@Override
+	public Map<Integer, String> getAllStatesByCountryId(Integer countryId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public Map<Integer, String> getAllCitiesByStatesId(Integer stateId) {
+		List<UserStates> countriesList = statesrepo.findBycountryId();
+		Map <Integer , String > statessmap=new HashMap<>();
+		countriesList.forEach(x->{
+			statessmap.put(x.getStateId(), x.getStateName());
+		});
+		return null;
+	}
+	@Override
+	public Map<Integer, String> getALlCOuntries() {
+		List<UserCountries> countriesList = countriesrepo.findAll();
+		Map <Integer , String > countriesmap=new HashMap<>();
+		countriesList.forEach(x->{
+			countriesmap.put(x.getCountryId(), x.getCountryName());
+		});
+		
+		return countriesmap;
+	}
+	@Override
+	public boolean getAllMailIds(String mailId) {
+		com.example.entity.UserDetails user=userDetailsrepo.findByUserMailId(mailId);
+		return (user != null ? true : false);
+	}
+
+	
+}

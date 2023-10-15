@@ -1,0 +1,69 @@
+package com.example.service;
+
+import java.beans.Beans;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.example.bindings.UserDetails;
+import com.example.entity.UserCities;
+import com.example.entity.UserCountries;
+import com.example.entity.UserStates;
+import com.example.repo.UserDetailsRepo;
+import com.example.repo.UserStatesRepo;
+import com.example.repo.UsercitiesRepo;
+import com.example.repo.UsersCOuntriesRepo;
+
+public class UserServiceImplementationClass implements UserRegistrationServiceInterface {
+	
+	@Autowired
+	private UsercitiesRepo citiesrepo;
+	@Autowired
+	private UserDetailsRepo userDetailsrepo;
+	@Autowired
+	private UserStatesRepo statesrepo; 
+	@Autowired
+	private UsersCOuntriesRepo countriesrepo;
+	@Override
+	public boolean userRegistration(UserDetails userdetails) {
+		return (userDetailsrepo.save(userdetails)!=null?true:false);
+	}
+	@Override
+	public Map<Integer, String> getAllCitiesByStatesId(Integer countryId) {
+		List<UserCities> citiesList = citiesrepo.findByStateId();
+		Map <Integer , String > citiesmap=new HashMap<>();
+		citiesList.forEach(x->{
+			citiesmap.put(x.getCityId(), x.getCityName());
+		});
+		return citiesmap ;
+	}
+	@Override
+	public Map<Integer, String> getAllStatesByCountryId(Integer stateId) {
+		List<UserStates> statesList = statesrepo.findByCountryId();
+		Map <Integer , String > statesmap=new HashMap<>();
+		statesList.forEach(x->{
+			statesmap.put(x.getStateId(), x.getStateName());
+		});
+		return statesmap ;
+	}
+	@Override
+	public Map<Integer, String> getALlCOuntries() {
+		List<UserCountries> countriesList = countriesrepo.findAll();
+		Map <Integer , String > countriesmap=new HashMap<>();
+		countriesList.forEach(x->{
+			countriesmap.put(x.getCountryId(), x.getCountryName());
+		});
+		
+		return countriesmap;
+	}
+	@Override
+	public boolean getAllMailIds(String mailId) {
+		com.example.entity.UserDetails user=userDetailsrepo.findByUserMailId(mailId);
+		return (user != null ? true : false);
+	}
+
+	
+}
