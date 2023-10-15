@@ -25,6 +25,6 @@ spring:
     username: katamanisuneel8@gmail.com
   mvc:
     pathmatch:
-      matching-strategy: 'ant-path-matcher '
+      matching-strategy: ant-path-matcher 
   profiles:
     active: test

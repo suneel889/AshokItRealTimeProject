@@ -6296,3 +6296,12 @@ Caused by: org.apache.maven.model.building.ModelBuildingException: 1 problem was
 2023-10-15 21:23:36,924 [Worker-48: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/spring-jcl/6.0.12/spring-jcl-6.0.12-sources.jar
 2023-10-15 21:23:36,936 [Worker-48: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.springframework:spring-jcl:6.0.12
 2023-10-15 21:23:37,188 [Worker-48: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/springframework/spring-test/6.0.12/spring-test-6.0.12-sources.jar
+2023-10-15 21:23:37,615 [Worker-48: Download sources and javadoc] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/springframework/spring-test/6.0.12/spring-test-6.0.12-sources.jar
+2023-10-15 21:23:37,623 [Worker-48: Download sources and javadoc] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.springframework:spring-test:6.0.12
+2023-10-15 23:20:17,345 [Worker-62: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2023-10-15 23:20:18,494 [Worker-62: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.example:UserAccountManagementService:0.0.1-SNAPSHOT @ C:\Users\admin\Desktop\java RealTime By Ashok it\UserAccountManagementService\pom.xml.
+2023-10-15 23:20:20,900 [Worker-62: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /UserAccountManagementService/src/main/java
+2023-10-15 23:20:20,902 [Worker-62: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /UserAccountManagementService/src/main/resources
+2023-10-15 23:20:20,904 [Worker-62: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /UserAccountManagementService/src/main/resources
+2023-10-15 23:20:20,907 [Worker-62: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /UserAccountManagementService/src/test/java
+2023-10-15 23:20:25,885 [Worker-62: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed for 1 poms: local refresh takes 0.00 sec, refresh facades takes 3.00 sec, update config takes 4.00 sec 
